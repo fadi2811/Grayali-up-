@@ -1,7 +1,7 @@
 {
   "name": "Grayali up",
   "short_name": "Grayali up",
-  "description": "Ton repas de midi, livré à ta salle.",
+  "description": "Votre déjeuner livré au bureau.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#fbf6ef",
