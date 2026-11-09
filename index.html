@@ -16,9 +16,20 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23e9a84b'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-size='34' font-weight='700' text-anchor='middle' fill='%231c1c1c'%3EG%3C/text%3E%3C/svg%3E">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,800;1,600;1,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" href="fonts/poppins-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/apf-640.webp" as="image" fetchpriority="high">
+<link rel="preconnect" href="https://script.google.com">
+<link rel="preconnect" href="https://script.googleusercontent.com">
+<style>
+@font-face{font-family:'Montserrat';font-style:italic;font-weight:700;font-display:swap;src:url(fonts/montserrat-700-i.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Montserrat';font-style:normal;font-weight:700 800;font-display:swap;src:url(fonts/montserrat.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/poppins-400.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/poppins-500.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/poppins-800.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+</style>
 <style>
 :root{
   color-scheme:dark;
@@ -431,9 +442,9 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
       <div class="cd" id="cd"></div>
     </div>
     <div class="art" aria-hidden="true">
-      <div class="p1"><img src="img/apf.jpg" alt=""></div>
-      <div class="p2"><img src="img/alp.jpg" alt=""></div>
-      <div class="p3"><img src="img/sp.jpg" alt=""></div>
+      <div class="p1"><img src="img/apf-640.webp" alt="" width="640" height="640" fetchpriority="high" decoding="async"></div>
+      <div class="p2"><img src="img/alp-360.webp" srcset="img/alp-360.webp 360w, img/alp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"></div>
+      <div class="p3"><img src="img/sp-360.webp" srcset="img/sp-360.webp 360w, img/sp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"></div>
       <div class="tag t1"><span class="ic">🛵</span><span>Livré au bureau<small>de 12h à 12h40</small></span></div>
       <div class="tag t2"><span class="ic">💳</span><span>Paiement Wave<small>lien envoyé sur WhatsApp</small></span></div>
     </div>
@@ -657,7 +668,7 @@ var D = [
   {n:"Choukouya de poulet",p:1300,st:15,img:"ch",c:["grill","poulet"],x:"Poulet braisé façon choukouya, épices, oignons et légumes."},
   {n:"Attiéké + poulet grillé",p:1300,st:15,img:"pg",c:["attieke","grill","poulet"],x:"Attiéké, poulet grillé au feu de bois et crudités fraîches."}
 ];
-D.forEach(function(x){x.sd=x.st;x.src="img/"+x.img+".jpg"});
+D.forEach(function(x){x.sd=x.st;x.src="img/"+x.img+"-640.webp";x.sm="img/"+x.img+"-360.webp"});
 var CATS=[["all","Tout"],["poulet","Poulet"],["grill","Grillades"],["attieke","Attiéké"],["alloco","Alloco"],["frites","Frites"],["riz","Riz & pâtes"]];
 
 /* Boutique — même ordre que le site classique (stock p0, p1, …) */
@@ -732,7 +743,7 @@ function drawPj(){
   if(!x||!LIV_OPEN||(x.st<=0&&(!di.todayOpen||x.sd<=0))){w.hidden=true;return}
   w.hidden=false;
   var s=stk(x,dayMode);
-  $("#pj").innerHTML='<div class="ph"><img src="'+x.src+'" alt="'+esc(x.n)+'"></div><div class="bd"><span class="ribbon">★ Plat du jour</span><h3>'+esc(x.n)+'</h3><p>'+esc(x.x)+'</p><div class="row"><span class="price">'+f(x.p)+'</span><span class="pill '+(s<=0?"":s<=3?"low":"ok")+'">'+stockTx(s)+'</span></div><div class="row"><button class="btn p" onclick="dopen('+pjIdx+')"'+(s<=0?" disabled":"")+'>Je le veux</button></div></div>';
+  $("#pj").innerHTML='<div class="ph"><img src="'+x.src+'" alt="'+esc(x.n)+'" decoding="async"></div><div class="bd"><span class="ribbon">★ Plat du jour</span><h3>'+esc(x.n)+'</h3><p>'+esc(x.x)+'</p><div class="row"><span class="price">'+f(x.p)+'</span><span class="pill '+(s<=0?"":s<=3?"low":"ok")+'">'+stockTx(s)+'</span></div><div class="row"><button class="btn p" onclick="dopen('+pjIdx+')"'+(s<=0?" disabled":"")+'>Je le veux</button></div></div>';
 }
 function stockTx(s){return s<=0?"Épuisé":s===1?"Dernier plat !":s<=3?"Plus que "+s:s+" disponibles"}
 
@@ -767,7 +778,7 @@ function drawGrid(){
     if(q&&norm(x.n+" "+x.x).indexOf(q)<0)return;
     var s=stk(x,dayMode),inC=lc[i]||0,left=s-inC,off=!LIV_OPEN||s<=0;
     var badge=!LIV_OPEN?"":'<span class="stk'+(s<=0?" out":s<=3?" low":"")+'">'+stockTx(s)+'</span>';
-    h+='<article class="dish'+(off?" out":"")+'"><button class="open" onclick="dopen('+i+')" aria-label="Voir '+esc(x.n)+'"'+(LIV_OPEN?"":" disabled")+'></button><div class="im"><img src="'+x.src+'" alt="" loading="lazy">'+badge+(inC?'<span class="incart">'+inC+' au panier</span>':"")+'</div><div class="bd"><h3>'+esc(x.n)+'</h3><p>'+esc(x.x)+'</p><div class="ft"><span class="price">'+f(x.p)+'</span><button class="qa" onclick="quick('+i+')" aria-label="Ajouter '+esc(x.n)+' au panier"'+(off||left<=0?" disabled":"")+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>';
+    h+='<article class="dish'+(off?" out":"")+'"><button class="open" onclick="dopen('+i+')" aria-label="Voir '+esc(x.n)+'"'+(LIV_OPEN?"":" disabled")+'></button><div class="im"><img src="'+x.sm+'" srcset="'+x.sm+' 360w, '+x.src+' 640w" sizes="(max-width:560px) 50vw, 300px" alt="" loading="lazy" decoding="async" width="360" height="270">'+badge+(inC?'<span class="incart">'+inC+' au panier</span>':"")+'</div><div class="bd"><h3>'+esc(x.n)+'</h3><p>'+esc(x.x)+'</p><div class="ft"><span class="price">'+f(x.p)+'</span><button class="qa" onclick="quick('+i+')" aria-label="Ajouter '+esc(x.n)+' au panier"'+(off||left<=0?" disabled":"")+'><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>';
   });
   $("#grid").innerHTML=h||'<p class="empty">Aucun plat ne correspond. Essaie un autre mot.</p>';
 }
@@ -783,7 +794,7 @@ function bump(){var b=$("#cartb");b.classList.remove("bump");void b.offsetWidth;
 function dopen(i){
   cur=i;cq=1;cday=dayMode;$("#derr").textContent="";
   var x=D[i];
-  $("#dimg").innerHTML='<img src="'+x.src+'" alt="'+esc(x.n)+'">';
+  $("#dimg").innerHTML='<img src="'+x.src+'" alt="'+esc(x.n)+'" decoding="async">';
   $("#dn").textContent=x.n;$("#dd").textContent=x.x+" "+PLACE+".";$("#dp").textContent=f(x.p);
   dshow();openOv("dlg");
 }
@@ -838,7 +849,7 @@ function drawCart(){
   var tel=ls("upbTel")||"",lieu=ls("upbLieu")||"",nom=ls("gupNom")||"";
   var keep={l:($("#cl")||{}).value,t:($("#ct")||{}).value,n:($("#cn")||{}).value,o:($("#cnote")||{}).value};
   var h='<div class="dday"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Livraison '+jourTx(dayMode,di)+', 12h–12h40</span></div>';
-  h+=ks.map(function(k){var x=D[k],s=stk(x,dayMode);return '<div class="line"><img src="'+x.src+'" alt=""><div><b>'+esc(x.n)+'</b><small>'+f(x.p*lc[k])+'</small><br><button class="rm" onclick="lset('+k+',0)">Retirer</button></div><span class="qty sm"><button onclick="lset('+k+','+(lc[k]-1)+')" aria-label="Moins">−</button><span>'+lc[k]+'</span><button onclick="lset('+k+','+(lc[k]+1)+')" aria-label="Plus"'+(lc[k]>=s?" disabled":"")+'>+</button></span></div>'}).join("");
+  h+=ks.map(function(k){var x=D[k],s=stk(x,dayMode);return '<div class="line"><img src="'+x.sm+'" alt="" loading="lazy" decoding="async"><div><b>'+esc(x.n)+'</b><small>'+f(x.p*lc[k])+'</small><br><button class="rm" onclick="lset('+k+',0)">Retirer</button></div><span class="qty sm"><button onclick="lset('+k+','+(lc[k]-1)+')" aria-label="Moins">−</button><span>'+lc[k]+'</span><button onclick="lset('+k+','+(lc[k]+1)+')" aria-label="Plus"'+(lc[k]>=s?" disabled":"")+'>+</button></span></div>'}).join("");
   h+='<form id="cform" novalidate style="display:flex;flex-direction:column;gap:14px;margin-top:6px">';
   h+='<label class="field">Lieu de livraison<input id="cl" autocomplete="organization" placeholder="Entreprise, service ou étage" value="'+esc(keep.l!=null?keep.l:lieu)+'"></label>';
   h+='<label class="field">Votre numéro WhatsApp<input id="ct" type="tel" inputmode="tel" autocomplete="tel" placeholder="05 00 00 00 00" value="'+esc(keep.t!=null?keep.t:tel)+'"><span class="hint">Sert aussi à compter vos points fidélité.</span></label>';
@@ -974,10 +985,11 @@ function reserve(items,code,err,btn,ok,meta){
   var arr=Object.keys(need).map(function(id){return {id:id,qty:need[id]}});
   busy=true;var b=$(btn),bt=b.textContent;b.disabled=true;b.textContent="Vérification du stock…";$(err).textContent="";
   function end(){busy=false;b.disabled=false;b.textContent=bt}
-  fetch(STOCK_URL,{method:"POST",body:JSON.stringify({code:code,items:arr,tel:meta.tel,lieu:meta.lieu,jour:meta.jour,total:meta.total,nom:meta.nom})})
+  var ctl=window.AbortController?new AbortController():null,tmo=setTimeout(function(){if(ctl)ctl.abort()},12000);
+  fetch(STOCK_URL,{method:"POST",signal:ctl?ctl.signal:undefined,body:JSON.stringify({code:code,items:arr,tel:meta.tel,lieu:meta.lieu,jour:meta.jour,total:meta.total,nom:meta.nom})})
     .then(function(r){return r.json()})
-    .then(function(d){end();if(d.ok){ok();applyStock(d.stock)}else{applyStock(d.stock);var e=$(err);if(e)e.textContent=d.error||"Commande impossible."}})
-    .catch(function(){end();ok(true)});
+    .then(function(d){clearTimeout(tmo);end();if(d.ok){ok();applyStock(d.stock)}else{applyStock(d.stock);var e=$(err);if(e)e.textContent=d.error||"Commande impossible."}})
+    .catch(function(){clearTimeout(tmo);end();ok(true)});
 }
 function newCode(){function r(){return ("0"+Math.floor(Math.random()*100)).slice(-2)}return r()+"-"+r()}
 
@@ -1001,7 +1013,7 @@ function drawReo(){
   if(!ks.length){e.hidden=true;return}
   ks.forEach(function(k){tot+=D[k].p*lastOrder.lc[k];n+=lastOrder.lc[k]});
   e.hidden=false;
-  e.innerHTML='<div class="ims">'+ks.slice(0,3).map(function(k){return '<img src="'+D[k].src+'" alt="">'}).join("")+'</div><div class="tx"><b>Comme la dernière fois&nbsp;?</b><span>'+ks.map(function(k){return lastOrder.lc[k]+"× "+esc(D[k].n)}).join(" · ")+'</span></div><button class="btn p" onclick="reorder()">Recommander · '+f(tot)+'</button>';
+  e.innerHTML='<div class="ims">'+ks.slice(0,3).map(function(k){return '<img src="'+D[k].sm+'" alt="" decoding="async">'}).join("")+'</div><div class="tx"><b>Comme la dernière fois&nbsp;?</b><span>'+ks.map(function(k){return lastOrder.lc[k]+"× "+esc(D[k].n)}).join(" · ")+'</span></div><button class="btn p" onclick="reorder()">Recommander · '+f(tot)+'</button>';
 }
 function reorder(){
   var miss=0;lc={};
