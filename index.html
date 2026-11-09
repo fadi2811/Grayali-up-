@@ -346,6 +346,43 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
 .toast.on{opacity:1;transform:translate(-50%,0)}
 .toast svg{width:20px;height:20px;color:var(--gold);flex:none}
 
+/* ===== BOOST ===== */
+.cd{margin-top:30px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:16px 18px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(233,168,75,.35);max-width:540px}
+.cd .t{font-size:13.5px;color:var(--herom);line-height:1.35;flex:1;min-width:150px}
+.cd .t b{display:block;color:var(--herox);font-size:15px}
+.cd .dg{display:flex;gap:6px;align-items:center}
+.cd .u{min-width:54px;text-align:center;padding:8px 6px;border-radius:12px;background:#111;border:1px solid #333}
+.cd .u b{display:block;font-family:var(--fd);font-size:26px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.cd .u small{font-size:10.5px;color:var(--herom);text-transform:uppercase;letter-spacing:.08em}
+.reo{display:flex;align-items:center;gap:16px;padding:14px 16px;border-radius:18px;background:linear-gradient(120deg,rgba(233,168,75,.16),rgba(233,168,75,.04));border:1px solid rgba(233,168,75,.4);margin-bottom:22px}
+.reo .ims{display:flex;flex:none}
+.reo .ims img{width:46px;height:46px;border-radius:12px;object-fit:cover;border:2px solid var(--bg);margin-left:-12px}
+.reo .ims img:first-child{margin-left:0}
+.reo .tx{flex:1;min-width:0;font-size:14px;color:var(--ink2)}
+.reo .tx b{display:block;color:var(--ink);font-size:15px}
+.reo .tx span{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reo .btn{height:44px;padding:0 18px;font-size:14.5px}
+@media (max-width:560px){.reo{flex-wrap:wrap}.reo .btn{width:100%}}
+.team{display:flex;flex-direction:column;gap:10px;padding:14px;border-radius:14px;border:1px dashed var(--line)}
+.sw{display:flex;align-items:center;justify-content:space-between;gap:12px;font-weight:700;font-size:14.5px;cursor:pointer}
+.sw small{display:block;font-weight:500;color:var(--mu);font-size:12.5px}
+.sw input{appearance:none;-webkit-appearance:none;width:46px;height:28px;border-radius:999px;background:var(--line);position:relative;flex:none;cursor:pointer;transition:background .2s}
+.sw input::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;transition:transform .2s}
+.sw input:checked{background:var(--gold)}
+.sw input:checked::after{transform:translateX(18px)}
+.tm{display:grid;grid-template-columns:auto 1fr;gap:8px 10px;align-items:center;font-size:13.5px;color:var(--ink2)}
+.tm input{height:42px;padding:0 12px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-size:15px;width:100%}
+.biz{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center;padding:40px;border-radius:28px;background:radial-gradient(circle at 100% 0,rgba(233,168,75,.22),transparent 55%),var(--card);border:1px solid rgba(233,168,75,.35)}
+.biz h2{font-size:clamp(28px,3.4vw,40px);margin:12px 0 12px}
+.biz p{color:var(--mu);margin:0 0 22px}
+.biz ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.biz li{display:flex;gap:12px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:var(--bg2);border:1px solid var(--line);font-size:14.5px;color:var(--ink2)}
+.biz li b{display:block;color:var(--ink);font-size:15px}
+.biz li i{font-style:normal;font-size:22px;flex:none}
+@media (max-width:860px){.biz{grid-template-columns:1fr;padding:28px 22px}}
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:34;width:58px;height:58px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .25s,opacity .25s}
+.fab svg{width:30px;height:30px}
+.fab.hide{transform:scale(.6);opacity:0;pointer-events:none}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -362,6 +399,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
       <a href="#how">Comment ça marche</a>
       <a href="#loyalty">Fidélité</a>
       <a href="#shop">Boutique</a>
+      <a href="#biz">Entreprises</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="tact">
@@ -390,6 +428,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
         <div><b>12h–12h40</b>livré à votre bureau</div>
         <div><b>30 pts</b>= un cadeau surprise</div>
       </div>
+      <div class="cd" id="cd"></div>
     </div>
     <div class="art" aria-hidden="true">
       <div class="p1"><img src="img/apf.jpg" alt=""></div>
@@ -422,6 +461,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
       </label>
     </div>
     <div class="chips" id="cats" style="margin-bottom:20px"></div>
+    <div class="reo" id="reo" hidden></div>
     <div class="dayban" id="dayban"></div>
     <div class="grid" id="grid"></div>
   </div>
@@ -457,7 +497,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
   </div>
 </section>
 
-<section class="s alt" id="shop">
+<section class="s" id="shop">
   <div class="wrap">
     <div class="sh2"><div><span class="eyebrow">Boutique</span><h2>Bientôt plus que des plats</h2><p>Vêtements, chaussures et accessoires, livrés à votre bureau de la même façon.</p></div></div>
     <div id="shopLock" class="shopc reveal"><div class="em">👕👟🎒</div><h3>La boutique ouvre bientôt</h3><p>Nous préparons une sélection pour vous. En attendant, commandez votre déjeuner !</p><p style="margin-top:20px"><a class="btn o" href="#menu">Voir le menu</a></p></div>
@@ -468,7 +508,25 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
   </div>
 </section>
 
-<section class="s" id="faq">
+<section class="s" id="biz">
+  <div class="wrap">
+    <div class="biz reveal">
+      <div>
+        <span class="eyebrow">Entreprises</span>
+        <h2>Vous déjeunez en équipe&nbsp;? On s’organise avec vous.</h2>
+        <p>Service, plateau, étage entier : une seule personne commande pour tout le monde, chaque plat arrive avec le nom de son collègue.</p>
+        <a class="btn p" id="bizcta" href="#" target="_blank" rel="noopener">Parler d’une formule entreprise</a>
+      </div>
+      <ul>
+        <li><i>👥</i><span><b>Commande d’équipe</b>Un nom par plat, tout est livré ensemble.</span></li>
+        <li><i>📄</i><span><b>Bon de commande</b>Un document propre à garder ou à transmettre au service.</span></li>
+        <li><i>💬</i><span><b>Un contact direct</b>Une question, un imprévu&nbsp;? Écrivez-nous sur WhatsApp.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="s alt" id="faq">
   <div class="wrap">
     <div class="sh2"><div><span class="eyebrow">Questions fréquentes</span><h2>Tout ce qu’il faut savoir</h2></div></div>
     <div class="faq">
@@ -501,6 +559,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
   </div>
 </footer>
 
+<a class="fab" id="fab" href="#" target="_blank" rel="noopener" aria-label="Nous écrire sur WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg></a>
 <button class="fbar" id="fbar" onclick="openCart()" aria-label="Voir le panier">
   <span><span id="fbn">1 plat</span><small id="fbd"></small></span>
   <span class="go"><span id="fbt">0 FCFA</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
@@ -552,6 +611,7 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
       <a class="btn w blk" id="ow" href="#" target="_blank" rel="noopener" onclick="sentWa()">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.3 0 .5l-.4.6c-.1.2-.3.3-.1.6.2.3.7 1.2 1.6 2 1.1 1 2 1.3 2.3 1.4.3.1.4.1.6-.1l.8-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>
         Envoyer sur WhatsApp</a>
+      <button class="btn o blk" id="bonb" onclick="bon()">📄 Télécharger le bon de commande</button>
       <button class="btn o blk" id="fb" hidden onclick="fin()">C’est envoyé, terminer</button>
       <details><summary>Le bouton ne marche pas ?</summary><p style="margin-top:8px">Copiez ce message et envoyez-le sur WhatsApp au <b>05 75 02 84 17</b>.</p><textarea id="om" rows="6" readonly></textarea><button class="btn o blk" style="height:46px" onclick="cp(this)">Copier le message</button></details>
     </div>
@@ -614,6 +674,7 @@ var P = [
 
 /* ===================================================================== */
 var pjIdx=-1;D.forEach(function(x,i){if(PJ_NAME&&x.n===PJ_NAME)pjIdx=i});
+var team=false,tnames={},lastOrder=null;
 var lc={},dayMode="t",cat="all",q="",cur=-1,cq=1,cday="t",busy=false,sentFlag=false;
 var cart={},sel={},pcat="Tout",cartMode="lunch",lastFocus=null,pay={total:0,mode:"t",jour:""};
 
@@ -759,6 +820,7 @@ function drawBar(){
   var c=lcount(),di=dayInfo();
   $("#cartn").textContent=c;
   $("#fbar").classList.toggle("on",c>0&&$("#cart").hidden&&$("#dlg").hidden&&$("#done").hidden);
+  var fb=$("#fab");if(fb)fb.classList.toggle("hide",c>0||!$("#cart").hidden||!$("#dlg").hidden||!$("#done").hidden);
   $("#fbn").textContent=plural(c,"plat");
   $("#fbd").textContent="Livraison "+(dayMode==="d"?"aujourd’hui":di.nextName);
   $("#fbt").textContent=f(ltot());
@@ -774,20 +836,25 @@ function drawCart(){
     return;
   }
   var tel=ls("upbTel")||"",lieu=ls("upbLieu")||"",nom=ls("gupNom")||"";
-  var keep={l:($("#cl")||{}).value,t:($("#ct")||{}).value,n:($("#cn")||{}).value};
+  var keep={l:($("#cl")||{}).value,t:($("#ct")||{}).value,n:($("#cn")||{}).value,o:($("#cnote")||{}).value};
   var h='<div class="dday"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></svg><span>Livraison '+jourTx(dayMode,di)+', 12h–12h40</span></div>';
   h+=ks.map(function(k){var x=D[k],s=stk(x,dayMode);return '<div class="line"><img src="'+x.src+'" alt=""><div><b>'+esc(x.n)+'</b><small>'+f(x.p*lc[k])+'</small><br><button class="rm" onclick="lset('+k+',0)">Retirer</button></div><span class="qty sm"><button onclick="lset('+k+','+(lc[k]-1)+')" aria-label="Moins">−</button><span>'+lc[k]+'</span><button onclick="lset('+k+','+(lc[k]+1)+')" aria-label="Plus"'+(lc[k]>=s?" disabled":"")+'>+</button></span></div>'}).join("");
   h+='<form id="cform" novalidate style="display:flex;flex-direction:column;gap:14px;margin-top:6px">';
   h+='<label class="field">Lieu de livraison<input id="cl" autocomplete="organization" placeholder="Entreprise, service ou étage" value="'+esc(keep.l!=null?keep.l:lieu)+'"></label>';
   h+='<label class="field">Votre numéro WhatsApp<input id="ct" type="tel" inputmode="tel" autocomplete="tel" placeholder="05 00 00 00 00" value="'+esc(keep.t!=null?keep.t:tel)+'"><span class="hint">Sert aussi à compter vos points fidélité.</span></label>';
   h+='<label class="field">Votre nom <span class="hint" style="display:inline">(facultatif)</span><input id="cn" autocomplete="given-name" placeholder="Pour vous trouver à la livraison" value="'+esc(keep.n!=null?keep.n:nom)+'"></label>';
+  h+='<label class="field">Instructions de livraison <span class="hint" style="display:inline">(facultatif)</span><input id="cnote" placeholder="Ex. : appelez-moi à l’accueil, sans piment…" value="'+esc(keep.o!=null?keep.o:"")+'"></label>';
   h+='</form>';
+  h+='<div class="team"><label class="sw"><span>Commande d’équipe<small>Indiquez à qui est destiné chaque plat.</small></span><input type="checkbox" id="tsw"'+(team?" checked":"")+' onchange="saveTeam();team=this.checked;drawCart()"></label>';
+  if(team){h+='<div class="tm">';ks.forEach(function(k){for(var u=0;u<lc[k];u++){var id=k+"-"+u;h+='<span>'+esc(D[k].n.split(" (")[0])+'</span><input class="tn" data-id="'+id+'" placeholder="Nom du collègue" value="'+esc(tnames[id]||"")+'" oninput="tnames[this.dataset.id]=this.value">'}});h+='</div>'}
+  h+='</div>';
   h+='<div class="info"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16h.01"/></svg><span><b>Paiement par Wave.</b> Après votre commande, vous recevez sur WhatsApp le lien pour payer. Payez avant 22h'+(dayMode==="d"?" (pour aujourd’hui : dès réception du lien)":"")+', sinon elle est annulée.</span></div>';
   $("#cbody").innerHTML=h;
   var c=lcount();
   $("#cfoot").innerHTML='<div class="sum"><div><span>'+plural(c,"plat")+'</span><span>'+f(ltot())+'</span></div><div><span>Livraison au bureau</span><span>Offerte</span></div><div class="t"><span>Total</span><span>'+f(ltot())+'</span></div></div><p class="err" id="cerr"></p><button class="btn p blk" id="csend" onclick="sendLunch()">Commander sur WhatsApp</button>';
 }
-function lset(k,n){
+function saveTeam(){document.querySelectorAll(".tn").forEach(function(e){tnames[e.dataset.id]=e.value})}
+function lset(k,n){saveTeam();
   var s=stk(D[k],dayMode);
   if(n<=0)delete lc[k];else if(n<=s)lc[k]=n;
   saveLc();renderAll();drawCart();
@@ -798,17 +865,19 @@ function sendLunch(){
   $("#cl").parentNode.classList.remove("bad");$("#ct").parentNode.classList.remove("bad");
   if(dayMode==="d"&&!di.todayOpen){switchDay("t",true);lc={};saveLc();renderAll();drawCart();$("#cerr").textContent="Les commandes pour aujourd’hui sont fermées ("+hm(TODAY_END)+"). Choisissez "+di.nextName+".";return}
   var ks=Object.keys(lc);
-  if(!ks.length){$(err).textContent="Ton panier est vide.";return}
+  if(!ks.length){$(err).textContent="Votre panier est vide.";return}
   if(!l){$(err).textContent="Indiquez le lieu de livraison (entreprise, service ou étage).";$("#cl").parentNode.classList.add("bad");$("#cl").focus();return}
   if(t.replace(/\D/g,"").length<10){$(err).textContent="Indiquez votre numéro WhatsApp (10 chiffres).";$("#ct").parentNode.classList.add("bad");$("#ct").focus();return}
   ls("upbTel",t);ls("upbLieu",l);ls("gupNom",nm);
   var mode=dayMode,total=0;
   for(var j=0;j<ks.length;j++){if(lc[ks[j]]>stk(D[ks[j]],mode)){$(err).textContent="Plus assez de stock pour "+D[ks[j]].n+".";return}total+=D[ks[j]].p*lc[ks[j]]}
   var jour=jourTx(mode,di);
-  var lines=ks.map(function(k){return "- "+lc[k]+" x "+D[k].n}).join("\n");
-  var code=newCode();pay={total:total,mode:mode,jour:jour};
+  saveTeam();var note=($("#cnote").value||"").trim();
+  var lines=ks.map(function(k){var nm2=[];if(team)for(var u=0;u<lc[k];u++){var v=(tnames[k+"-"+u]||"").trim();if(v)nm2.push(v)}return "- "+lc[k]+" x "+D[k].n+(nm2.length?" ("+nm2.join(", ")+")":"")}).join("\n");
+  var code=newCode();pay={total:total,mode:mode,jour:jour,code:code,lieu:l,nom:nm,tel:t,note:note,items:ks.map(function(k){return {n:D[k].n,q:lc[k],p:D[k].p}}),team:team};
+  ls("gupLast",JSON.stringify({lc:JSON.parse(JSON.stringify(lc))}));
   reserve(ks.map(function(k){return {id:mode+k,qty:lc[k]}}),code,err,"#csend",function(u){
-    wa("Commande Grayali up PRO (bureau), code "+code+"\n"+lines+"\nLivraison : "+jour+", entre 12h et 12h40\nLieu : "+l+(nm?"\nNom : "+nm:"")+"\nMon numéro : "+t+"\nTotal : "+f(total)+"\nPaiement : Wave"+(u?"\n⚠️ Stock non vérifié":""),code);
+    wa("Commande Grayali up PRO (bureau), code "+code+"\n"+lines+"\nLivraison : "+jour+", entre 12h et 12h40\nLieu : "+l+(nm?"\nNom : "+nm:"")+(note?"\nInstructions : "+note:"")+"\nMon numéro : "+t+"\nTotal : "+f(total)+"\nPaiement : Wave"+(u?"\n⚠️ Stock non vérifié":""),code);
   },{tel:t,lieu:l,jour:jour,total:total,nom:nm});
 }
 
@@ -912,6 +981,43 @@ function reserve(items,code,err,btn,ok,meta){
 }
 function newCode(){function r(){return ("0"+Math.floor(Math.random()*100)).slice(-2)}return r()+"-"+r()}
 
+/* ---------- Compte à rebours ---------- */
+function pad(n){return ("0"+n).slice(-2)}
+function drawCd(){
+  var e=$("#cd");if(!e)return;
+  if(!LIV_OPEN){e.hidden=true;return}
+  var d=new Date(),di=dayInfo(),sec=d.getUTCHours()*3600+d.getUTCMinutes()*60+d.getUTCSeconds(),left=TODAY_END*60-sec;
+  if(di.todayOpen&&left>0){
+    var h=Math.floor(left/3600),m=Math.floor(left%3600/60),s2=left%60;
+    e.innerHTML='<div class="t"><b>Livré aujourd’hui à midi</b>si vous commandez dans les</div><div class="dg"><div class="u"><b>'+pad(h)+'</b><small>h</small></div><div class="u"><b>'+pad(m)+'</b><small>min</small></div><div class="u"><b>'+pad(s2)+'</b><small>s</small></div></div>';
+  }else e.innerHTML='<div class="t"><b>Prochaine livraison : '+di.next+'</b>entre 12h et 12h40. Commandez dès maintenant, c’est réservé.</div>';
+}
+/* ---------- Recommander ---------- */
+function drawReo(){
+  var e=$("#reo");
+  try{lastOrder=JSON.parse(ls("gupLast")||"null")}catch(x){lastOrder=null}
+  if(!lastOrder||!lastOrder.lc||Object.keys(lc).length||!LIV_OPEN){e.hidden=true;return}
+  var ks=Object.keys(lastOrder.lc).filter(function(k){return D[k]}),tot=0,n=0;
+  if(!ks.length){e.hidden=true;return}
+  ks.forEach(function(k){tot+=D[k].p*lastOrder.lc[k];n+=lastOrder.lc[k]});
+  e.hidden=false;
+  e.innerHTML='<div class="ims">'+ks.slice(0,3).map(function(k){return '<img src="'+D[k].src+'" alt="">'}).join("")+'</div><div class="tx"><b>Comme la dernière fois&nbsp;?</b><span>'+ks.map(function(k){return lastOrder.lc[k]+"× "+esc(D[k].n)}).join(" · ")+'</span></div><button class="btn p" onclick="reorder()">Recommander · '+f(tot)+'</button>';
+}
+function reorder(){
+  var miss=0;lc={};
+  Object.keys(lastOrder.lc).forEach(function(k){if(!D[k])return;var s=stk(D[k],dayMode),q=Math.min(lastOrder.lc[k],s);if(q>0)lc[k]=q;if(q<lastOrder.lc[k])miss++});
+  saveLc();renderAll();
+  if(!Object.keys(lc).length){toast("Ces plats sont épuisés pour ce jour");return}
+  if(miss)toast("Certains plats ne sont plus disponibles en totalité");
+  openCart();
+}
+/* ---------- Bon de commande ---------- */
+function bon(){
+  var o=pay,dt=new Date().toLocaleString("fr-FR",{dateStyle:"long",timeStyle:"short",timeZone:"UTC"});
+  var rows=(o.items||[]).map(function(i){return '<tr><td>'+esc(i.n)+'</td><td>'+i.q+'</td><td>'+f(i.p)+'</td><td>'+f(i.p*i.q)+'</td></tr>'}).join("");
+  var html='<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bon de commande '+esc(o.code)+'</title><style>body{font:15px/1.5 Arial,sans-serif;color:#1c1c1c;max-width:720px;margin:0 auto;padding:32px 24px}h1{font-size:26px;margin:0}.lg{font-weight:800;font-size:22px}.lg i{font-style:normal;background:#e9a84b;padding:0 8px 2px;border-radius:7px;margin-left:4px}.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #e9a84b;padding-bottom:16px;margin-bottom:20px}.code{font-size:30px;font-weight:800;letter-spacing:2px}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #ddd}th{background:#f5f0ea;font-size:13px;text-transform:uppercase;letter-spacing:.05em}td:nth-child(n+2),th:nth-child(n+2){text-align:right}.tot td{font-weight:800;font-size:18px;border:0}.m{color:#666}.st{display:inline-block;padding:4px 10px;border-radius:6px;background:#fdeadc;color:#a2541c;font-weight:700;font-size:13px}button{margin-top:24px;padding:12px 20px;border:0;border-radius:999px;background:#1c1c1c;color:#fff;font-weight:700;font-size:15px}@media print{button{display:none}}</style></head><body><div class="hd"><div><div class="lg">Grayali<i>up</i></div><p class="m" style="margin:6px 0 0">Livraison de repas au bureau<br>WhatsApp : 05 75 02 84 17</p></div><div style="text-align:right"><h1>Bon de commande</h1><div class="code">'+esc(o.code)+'</div><div class="m">'+dt+'</div></div></div><p><b>Livraison :</b> '+esc(cap(o.jour||""))+', 12h–12h40<br><b>Lieu :</b> '+esc(o.lieu||"")+(o.nom?'<br><b>Nom :</b> '+esc(o.nom):"")+'<br><b>Téléphone :</b> '+esc(o.tel||"")+(o.note?'<br><b>Instructions :</b> '+esc(o.note):"")+'</p><table><tr><th>Plat</th><th>Qté</th><th>Prix</th><th>Total</th></tr>'+rows+'<tr class="tot"><td>Total</td><td></td><td></td><td>'+f(o.total)+'</td></tr></table><p><span class="st">Paiement par Wave à réception du lien WhatsApp</span></p><p class="m">Livraison incluse. Ce document n’est pas une facture acquittée.</p><button onclick="print()">Imprimer / enregistrer en PDF</button></body></html>';
+  var w=window.open("","_blank");if(w){w.document.write(html);w.document.close()}else toast("Autorisez les fenêtres pour télécharger le bon");
+}
 /* ---------- Envoi ---------- */
 function wa(msg,code){
   $("#ow").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
@@ -927,7 +1033,7 @@ function showFin(){if(sentFlag)$("#fb").hidden=false}
 document.addEventListener("visibilitychange",function(){if(!document.hidden)showFin()});
 window.addEventListener("focus",showFin);
 function fin(){
-  if(pay.jour==="Boutique"){cart={};sel={}}else{lc={};saveLc()}
+  if(pay.jour==="Boutique"){cart={};sel={}}else{lc={};team=false;tnames={};saveLc()}
   sentFlag=false;closeOv("done");renderAll();toast("Merci ! À tout à l’heure 👋");
 }
 
@@ -955,7 +1061,7 @@ document.addEventListener("keydown",function(e){
 var tt;function toast(m){$("#toastTx").textContent=m;var t=$("#toast");t.classList.add("on");clearTimeout(tt);tt=setTimeout(function(){t.classList.remove("on")},2400)}
 
 /* ---------- Rendu ---------- */
-function renderAll(){status();drawDaySeg();drawPj();drawGrid();drawBar();drawShop()}
+function renderAll(){status();drawDaySeg();drawPj();drawGrid();drawBar();drawShop();drawReo();drawCd()}
 function init(){
   loadLc();
   var di=dayInfo();
@@ -968,7 +1074,9 @@ function init(){
   $("#qs").addEventListener("input",function(){q=norm(this.value.trim());drawGrid()});
   $("#ptsf").addEventListener("submit",function(e){e.preventDefault();ptsGo()});
   drawCats();renderAll();loadStock();
-  setInterval(loadStock,30000);setInterval(function(){status();drawDaySeg();drawPj()},30000);
+  setInterval(loadStock,30000);setInterval(drawCd,1000);
+  $("#fab").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Bonjour Grayali up, j’ai une question :");
+  $("#bizcta").href="https://wa.me/"+WA+"?text="+encodeURIComponent("Bonjour Grayali up, je souhaite parler d’une formule entreprise pour mon équipe.");setInterval(function(){status();drawDaySeg();drawPj()},30000);
   var top=$("#top");window.addEventListener("scroll",function(){top.classList.toggle("sc",scrollY>8)},{passive:true});
   if("IntersectionObserver" in window){
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
