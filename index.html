@@ -394,6 +394,25 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
 .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:34;width:58px;height:58px;border-radius:50%;background:#1fa855;color:#fff;display:grid;place-items:center;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .25s,opacity .25s}
 .fab svg{width:30px;height:30px}
 .fab.hide{transform:scale(.6);opacity:0;pointer-events:none}
+/* ===== Photos du haut cliquables ===== */
+.art button{font:inherit;text-align:left;cursor:pointer;padding:0;border:0}
+.art .p1,.art .p2,.art .p3{transition:transform .25s,box-shadow .25s}
+.art .p1:hover,.art .p2:hover,.art .p3:hover{box-shadow:0 30px 60px rgba(0,0,0,.45),0 0 0 3px var(--gold)}
+.art .p1:hover{transform:rotate(-3deg) scale(1.02)}.art .p2:hover{transform:rotate(5deg) scale(1.04)}.art .p3:hover{transform:rotate(-2deg) scale(1.04)}
+.art .p1:active,.art .p2:active,.art .p3:active{filter:brightness(.92)}
+.pp{position:absolute;right:12px;bottom:12px;width:44px;height:44px;border-radius:50%;background:var(--gold);color:#1c1c1c;display:grid;place-items:center;box-shadow:0 6px 16px rgba(0,0,0,.35)}
+.pp svg{width:22px;height:22px}
+.p2 .pp,.p3 .pp{width:36px;height:36px;right:10px;bottom:10px}.p2 .pp svg,.p3 .pp svg{width:18px;height:18px}
+.nm{position:absolute;left:14px;top:14px;max-width:calc(100% - 80px);background:rgba(0,0,0,.62);color:#fff;font-weight:700;font-size:13px;padding:6px 10px;border-radius:999px;backdrop-filter:blur(6px)}
+.art .tag{cursor:pointer;border:0;font:inherit;font-weight:700;font-size:13.5px;color:#1b1410;text-align:left;transition:transform .2s}
+.tag:hover{transform:translateY(-2px)}
+.tag .chev{font-size:24px;line-height:1;color:#a08d7c;margin-left:2px}
+.hhint{margin-top:14px;font-size:13px;color:var(--herom);text-align:center}
+.pinfo{padding:30px 28px 26px;display:flex;flex-direction:column;gap:16px}
+.pinfo h2{font-size:26px}
+.pinfo ol{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.pinfo li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:var(--ink2)}
+.pinfo li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#1c1c1c;font-style:normal;font-weight:800;display:grid;place-items:center;font-size:14px}
 .reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s cubic-bezier(.2,.8,.2,1)}
 .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
@@ -441,12 +460,12 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
       </div>
       <div class="cd" id="cd"></div>
     </div>
-    <div class="art" aria-hidden="true">
-      <div class="p1"><img src="img/fm-640.webp" alt="" width="640" height="640" fetchpriority="high" decoding="async"></div>
-      <div class="p2"><img src="img/alp-360.webp" srcset="img/alp-360.webp 360w, img/alp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"></div>
-      <div class="p3"><img src="img/sp-360.webp" srcset="img/sp-360.webp 360w, img/sp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"></div>
-      <div class="tag t1"><span class="ic">🛵</span><span>Livré au bureau<small>de 12h à 12h40</small></span></div>
-      <div class="tag t2"><span class="ic">💳</span><span>Paiement Wave<small>lien envoyé sur WhatsApp</small></span></div>
+    <div class="art">
+      <button class="p1" onclick="heroDish('fm')" aria-label="Commander Frites + poulet mayo"><img src="img/fm-640.webp" alt="" width="640" height="640" fetchpriority="high" decoding="async"><span class="pp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span><span class="nm">Frites + poulet mayo</span></button>
+      <button class="p2" onclick="heroDish('alp')" aria-label="Commander Alloco + poulet pané"><img src="img/alp-360.webp" srcset="img/alp-360.webp 360w, img/alp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"><span class="pp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+      <button class="p3" onclick="heroDish('sp')" aria-label="Commander Spaghetti bolognaise + poulet mayo"><img src="img/sp-360.webp" srcset="img/sp-360.webp 360w, img/sp-640.webp 640w" sizes="230px" alt="" width="360" height="360" decoding="async"><span class="pp" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span></button>
+      <button class="tag t1" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})"><span class="ic">🛵</span><span>Livré au bureau<small>de 12h à 12h40</small></span><span class="chev" aria-hidden="true">›</span></button>
+      <button class="tag t2" onclick="openOv('payinfo')"><span class="ic">💳</span><span>Paiement Wave<small>lien envoyé sur WhatsApp</small></span><span class="chev" aria-hidden="true">›</span></button>
     </div>
   </div>
 </section>
@@ -629,6 +648,20 @@ footer .cp{grid-column:1/-1;border-top:1px solid rgba(255,255,255,.1);padding-to
   </div>
 </div>
 
+<div class="ov" id="payinfo" role="dialog" aria-modal="true" aria-labelledby="pih" hidden>
+  <div class="mod" style="max-width:440px;position:relative">
+    <button class="x" onclick="closeOv('payinfo')" aria-label="Fermer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pinfo">
+      <h2 id="pih">💳 Comment payer&nbsp;?</h2>
+      <ol>
+        <li><i>1</i><span>Vous commandez sur le site, le message WhatsApp est déjà rédigé.</span></li>
+        <li><i>2</i><span>Nous vous envoyons un <b>lien de paiement Wave</b> sur WhatsApp.</span></li>
+        <li><i>3</i><span>Vous payez <b>avant 22h</b> (pour une commande du jour : dès réception du lien).</span></li>
+      </ol>
+      <button class="btn p blk" onclick="closeOv('payinfo');document.getElementById('menu').scrollIntoView({behavior:'smooth'})">Voir le menu</button>
+    </div>
+  </div>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span id="toastTx"></span></div>
 
 <script>
@@ -1030,6 +1063,8 @@ function bon(){
   var html='<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Bon de commande '+esc(o.code)+'</title><style>body{font:15px/1.5 Arial,sans-serif;color:#1c1c1c;max-width:720px;margin:0 auto;padding:32px 24px}h1{font-size:26px;margin:0}.lg{font-weight:800;font-size:22px}.lg i{font-style:normal;background:#e9a84b;padding:0 8px 2px;border-radius:7px;margin-left:4px}.hd{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:3px solid #e9a84b;padding-bottom:16px;margin-bottom:20px}.code{font-size:30px;font-weight:800;letter-spacing:2px}table{width:100%;border-collapse:collapse;margin:16px 0}th,td{text-align:left;padding:10px 8px;border-bottom:1px solid #ddd}th{background:#f5f0ea;font-size:13px;text-transform:uppercase;letter-spacing:.05em}td:nth-child(n+2),th:nth-child(n+2){text-align:right}.tot td{font-weight:800;font-size:18px;border:0}.m{color:#666}.st{display:inline-block;padding:4px 10px;border-radius:6px;background:#fdeadc;color:#a2541c;font-weight:700;font-size:13px}button{margin-top:24px;padding:12px 20px;border:0;border-radius:999px;background:#1c1c1c;color:#fff;font-weight:700;font-size:15px}@media print{button{display:none}}</style></head><body><div class="hd"><div><div class="lg">Grayali<i>up</i></div><p class="m" style="margin:6px 0 0">Livraison de repas au bureau<br>WhatsApp : 05 75 02 84 17</p></div><div style="text-align:right"><h1>Bon de commande</h1><div class="code">'+esc(o.code)+'</div><div class="m">'+dt+'</div></div></div><p><b>Livraison :</b> '+esc(cap(o.jour||""))+', 12h–12h40<br><b>Lieu :</b> '+esc(o.lieu||"")+(o.nom?'<br><b>Nom :</b> '+esc(o.nom):"")+'<br><b>Téléphone :</b> '+esc(o.tel||"")+(o.note?'<br><b>Instructions :</b> '+esc(o.note):"")+'</p><table><tr><th>Plat</th><th>Qté</th><th>Prix</th><th>Total</th></tr>'+rows+'<tr class="tot"><td>Total</td><td></td><td></td><td>'+f(o.total)+'</td></tr></table><p><span class="st">Paiement par Wave à réception du lien WhatsApp</span></p><p class="m">Livraison incluse. Ce document n’est pas une facture acquittée.</p><button onclick="print()">Imprimer / enregistrer en PDF</button></body></html>';
   var w=window.open("","_blank");if(w){w.document.write(html);w.document.close()}else toast("Autorisez les fenêtres pour télécharger le bon");
 }
+/* ---------- Photos du haut ---------- */
+function heroDish(img){for(var i=0;i<D.length;i++){if(D[i].img===img){if(LIV_OPEN)dopen(i);return}}}
 /* ---------- Envoi ---------- */
 function wa(msg,code){
   $("#ow").href="https://wa.me/"+WA+"?text="+encodeURIComponent(msg);
